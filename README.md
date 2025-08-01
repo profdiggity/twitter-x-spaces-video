@@ -45,6 +45,20 @@ Twitter_Spaces_Overlay_Video.mp4
 
 ---
 
+### 🔊 Audio Recording Process
+
+Audio was captured in [Debian GNU/Linux](https://debian.org) using [GNOME Sound Recorder](https://wiki.gnome.org/Apps/SoundRecorder) with loopback audio:
+
+* **Input Device**:
+  `Monitor of Audio Controller Speaker + Headphones`
+
+* **Tools Used**:
+
+  * 🟣 GNOME Sound Recorder (FLAC output)
+  * 🧰 Other Options: [Audacity](https://audacityteam.org), [OBS Studio](https://obsproject.com)
+
+---
+
 ### ✂️ Optional: Trim Audio Start/End
 
 Before rendering the final video, you can trim your audio using:
@@ -82,20 +96,6 @@ Use the **"Seek to"** and **"Time to Record"** fields under the **Time** tab:
 | `Arcanum_Stream.flac`                   | Original lossless recording  |
 | `Arcanum_Stream.m4a`                    | Compressed version for video |
 | `Twitter_Spaces_Overlay_Video.mp4`      | Final waveform video output  |
-
----
-
-### 🔊 Audio Recording Process
-
-Audio was captured in [Debian GNU/Linux](https://debian.org) using [GNOME Sound Recorder](https://wiki.gnome.org/Apps/SoundRecorder) with loopback audio:
-
-* **Input Device**:
-  `Monitor of Audio Controller Speaker + Headphones`
-
-* **Tools Used**:
-
-  * 🟣 GNOME Sound Recorder (FLAC output)
-  * 🧰 Other Options: [Audacity](https://audacityteam.org), [OBS Studio](https://obsproject.com)
 
 ---
 
