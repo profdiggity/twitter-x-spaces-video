@@ -1,6 +1,6 @@
-## 📼 Twitter X Spaces Video Overlay Project
+## 📼 Twitter X Spaces Video Project
 
-This documentation covers how to generate a shareable waveform video of a Twitter X Space using a custom graphic, waveform visualization, and recorded audio. It includes all input/output files, creative assets, and instructions for modifying or reproducing the process. Example included is the Twitter X Space by @ArcanumVentures on July 31, 2025. https://x.com/ivycybered/status/1951301246427553983
+This documentation covers how to generate a shareable waveform video of a Twitter X Space using a custom graphic, waveform visualization, and recorded audio. It includes creative assets and instructions for modifying or reproducing the process. Example included is the Twitter X Space by @ArcanumVentures on July 31, 2025. https://x.com/ivycybered/status/1951301246427553983
 
 ![The final video product on Twitter X](screenshot.png)
 
@@ -87,10 +87,10 @@ Use the **"Seek to"** and **"Time to Record"** fields under the **Time** tab:
 
 ### 🔊 Audio Recording Process
 
-Audio was captured in **Debian GNU/Linux** using **GNOME Sound Recorder v42.0** with loopback audio:
+Audio was captured in [Debian GNU/Linux](https://debian.org) using [GNOME Sound Recorder](https://wiki.gnome.org/Apps/SoundRecorder) with loopback audio:
 
 * **Input Device**:
-  `Monitor of Tiger Lake-LP Smart Sound Technology Audio Controller Speaker + Headphones`
+  `Monitor of Audio Controller Speaker + Headphones`
 
 * **Tools Used**:
 
@@ -101,7 +101,7 @@ Audio was captured in **Debian GNU/Linux** using **GNOME Sound Recorder v42.0** 
 
 ### 🧱 Graphic Layers
 
-Editable via `.psd` or `.xcf`:https://x.com/ivycybered/status/1951301246427553983
+Editable via Photoshop `.psd` or GIMP `.xcf` (Free ***and** Free Software!):
 
 * `Twitter Space Title`: Top text description
 * `X Participants`: Visual block for speakers
