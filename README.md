@@ -1,6 +1,6 @@
 ## 📼 Twitter X Spaces Video Overlay Project
 
-This documentation covers how to generate a shareable waveform video of a Twitter X Space using a custom graphic, waveform visualization, and recorded audio. It includes all input/output files, creative assets, and instructions for modifying or reproducing the process.
+This documentation covers how to generate a shareable waveform video of a Twitter X Space using a custom graphic, waveform visualization, and recorded audio. It includes all input/output files, creative assets, and instructions for modifying or reproducing the process. Example included is the Twitter X Space by @ArcanumVentures on July 31, 2025. https://x.com/ivycybered/status/1951301246427553983
 
 ![The final video product on Twitter X](screenshot.png)
 
@@ -101,7 +101,7 @@ Audio was captured in **Debian GNU/Linux** using **GNOME Sound Recorder v42.0** 
 
 ### 🧱 Graphic Layers
 
-Editable via `.psd` or `.xcf`:
+Editable via `.psd` or `.xcf`:https://x.com/ivycybered/status/1951301246427553983
 
 * `Twitter Space Title`: Top text description
 * `X Participants`: Visual block for speakers
