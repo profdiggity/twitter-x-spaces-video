@@ -122,9 +122,9 @@ A branded, media-ready video for:
 ### 🛡️ License and Attribution
 
 Created by **Sean O'Brien**
-📧 [sean@ivycyber.com](mailto:sean@ivycyber.com)
-🐦 [@profdiggity](https://twitter.com/profdiggity) for [@IvyCyberEd](https://twitter.com/IvyCyberEd)
-🤓 [@profdiggity@privacysafe.social](https://privacysafe.social/@profdiggity) for [@ivycyber@privacysafe.social](https://privacysafe.social/@ivycyber)
+* 📧 [sean@ivycyber.com](mailto:sean@ivycyber.com)
+* 🐦 [@profdiggity](https://twitter.com/profdiggity) for [@IvyCyberEd](https://twitter.com/IvyCyberEd)
+* 🤓 [@profdiggity@privacysafe.social](https://privacysafe.social/@profdiggity) for [@ivycyber@privacysafe.social](https://privacysafe.social/@ivycyber)
 
 #### MIT License
 
