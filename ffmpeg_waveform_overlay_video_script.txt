@@ -1,0 +1,12 @@
+ffmpeg \
+-loop 1 -i Twitter_Spaces_Graphic_2025-07-31.png \
+-i Arcanum_Stream.m4a \
+-filter_complex "\
+[1:a]aformat=channel_layouts=mono,showwaves=s=1280x200:mode=line:rate=25:colors=white[waveform]; \
+[0:v]scale=1280:720[bg]; \
+[bg][waveform]overlay=(W-w)/2:(H-h)/2,format=yuv420p[v]" \
+-map "[v]" -map 1:a \
+-shortest \
+-r 30 \
+Twitter_Spaces_Overlay_Video.mp4
+

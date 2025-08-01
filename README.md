@@ -1,22 +1,21 @@
-## 📼 Twitter X Spaces Video Overlay Project
+## 📼 FFmpeg Script Description
 
-This documentation covers how to generate a shareable waveform video of a Twitter X Space using a custom graphic, waveform visualization, and recorded audio. It includes all input/output files, creative assets, and instructions for modifying or reproducing the process.
-
-![The final video on Twitter X](screenshot.png)
+This script generates a video combining a static background image with an animated audio waveform overlay, using `ffmpeg`.
 
 ---
 
-### 🎯 Objective
+### 🎯 Goal
 
-Create `Twitter_Spaces_Overlay_Video.mp4`, a 1280×720 video that:
+Create a video `Twitter_Spaces_Overlay_Video.mp4` that:
 
-* Uses a static PNG as the background
-* Animates a centered waveform from the audio
-* Outputs at 30 FPS and ends when the audio ends
+* Uses a static PNG image as the background
+* Animates a waveform from the audio track
+* Outputs a 1280×720 video at 30 FPS
+* Ends when the audio ends
 
 ---
 
-### 🧪 FFmpeg Command
+### 🧪 Full Command
 
 ```bash
 ffmpeg \
@@ -34,88 +33,77 @@ Twitter_Spaces_Overlay_Video.mp4
 
 ---
 
-### 🔍 Explanation
+### 🔍 Breakdown
 
-* `Twitter_Spaces_Graphic_2025-07-31.png`: Static background image
-* `Arcanum_Stream.m4a`: Audio track from Twitter X
-* `showwaves`: Generates waveform animation from audio
-* `-shortest`: Truncates video when audio ends
-* `-r 30`: Outputs at 30 frames per second
-* Output: `Twitter_Spaces_Overlay_Video.mp4`
-
----
-
-### ✂️ Optional: Trim Audio Start/End
-
-Before rendering the final video, you can trim your audio using:
-
-#### ✅ FFmpeg (CLI)
+#### 🖼️ Image Input
 
 ```bash
-ffmpeg -ss 00:00:10 -t 00:03:00 -i Arcanum_Stream.flac trimmed.flac
+-loop 1 -i Twitter_Spaces_Graphic_2025-07-31.png
 ```
 
-* `-ss`: Seek to start point
-* `-t`: Duration to record
-* Output: `trimmed.flac`
+* Loops the static PNG image continuously as video background
 
-#### ✅ WinFF (GUI for FFmpeg)
+#### 🔊 Audio Input
 
-For those who prefer a graphical interface, [WinFF](https://github.com/WinFF/winff) offers a friendly way to trim audio/video:
+```bash
+-i Arcanum_Stream.m4a
+```
 
-📸 **WinFF Time Tab:**
+* Input audio file for waveform visualization and final video
 
-Use the **"Seek to"** and **"Time to Record"** fields under the **Time** tab:
+#### 🎛️ Filter Complex
 
-* `Seek to`: Start position of the trim
-* `Time to Record`: Length of the clip you want to keep
+```bash
+-filter_complex "
+[1:a]aformat=channel_layouts=mono,
+showwaves=s=1280x200:mode=line:rate=25:colors=white[waveform];
+[0:v]scale=1280:720[bg];
+[bg][waveform]overlay=(W-w)/2:(H-h)/2,
+format=yuv420p[v]"
+```
+
+* `[1:a]aformat=channel_layouts=mono`: Ensure mono audio for waveform rendering
+* `showwaves`: Generate a white line-style waveform (1280×200) from audio
+* `scale`: Resize the background image to 1280×720
+* `overlay`: Center the waveform on the image
+* `format=yuv420p`: Ensures compatibility with most video players
+
+#### 🎬 Output Configuration
+
+```bash
+-map "[v]" -map 1:a
+```
+
+* Use the composed video and original audio
+
+```bash
+-shortest
+```
+
+* End video when audio ends
+
+```bash
+-r 30
+```
+
+* Set output frame rate to 30 fps
+
+```bash
+Twitter_Spaces_Overlay_Video.mp4
+```
+
+* Output video filename
 
 ---
 
-### 📁 Included Files
+### ✅ Result
 
-| File                                    | Description                  |
-| --------------------------------------- | ---------------------------- |
-| `Twitter_Spaces_Graphic_2025-07-31.psd` | Photoshop layered graphic    |
-| `Twitter_Spaces_Graphic_2025-07-31.xcf` | GIMP editable version        |
-| `Twitter_Spaces_Graphic_2025-07-31.png` | Flattened image for FFmpeg   |
-| `Arcanum_Stream.flac`                   | Original lossless recording  |
-| `Arcanum_Stream.m4a`                    | Compressed version for video |
-| `Twitter_Spaces_Overlay_Video.mp4`      | Final waveform video output  |
+A polished, shareable video:
 
----
-
-### 🔊 Audio Recording Process
-
-Audio was captured in **Debian GNU/Linux** using **GNOME Sound Recorder v42.0** with loopback audio:
-
-* **Input Device**:
-  `Monitor of Tiger Lake-LP Smart Sound Technology Audio Controller Speaker + Headphones`
-
-* **Tools Used**:
-
-  * 🟣 GNOME Sound Recorder (FLAC output)
-  * 🧰 Other Options: [Audacity](https://audacityteam.org), [OBS Studio](https://obsproject.com)
-
----
-
-### 🧱 Graphic Layers
-
-Editable via `.psd` or `.xcf`:
-
-* `Twitter Space Title`: Top text bar
-* `X Participants`: Visual block for speakers
-* `Background`: Poster-style base layer
-
----
-
-### ✅ Final Output
-
-A branded, media-ready video for:
-
-* Twitter X Space recaps
-* Remixing into video shorts or podcast teasers
-* Documenting an event without requiring Twitter X app
+* Static branded background
+* Synchronized waveform animation
+* Clean audio
+* Great for social media or archives (e.g., Twitter Spaces replay)
 
 ---
 
@@ -124,7 +112,6 @@ A branded, media-ready video for:
 Created by **Sean O'Brien**
 📧 [sean@ivycyber.com](mailto:sean@ivycyber.com)
 🐦 [@profdiggity](https://twitter.com/profdiggity) for [@IvyCyberEd](https://twitter.com/IvyCyberEd)
-🤓 [@profdiggity@privacysafe.social](https://privacysafe.social/@profdiggity)
 
 #### MIT License
 
@@ -152,4 +139,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
----
